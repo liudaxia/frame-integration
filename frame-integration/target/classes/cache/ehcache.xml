@@ -1,0 +1,39 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect">
+	<diskStore path="E:/cache/integrationcache" />
+	
+	<!-- 必须配置默认缓存 -->
+	<defaultCache 
+		maxElementsInMemory="10000" 
+		eternal="false"
+	    timeToIdleSeconds="120" 
+	    timeToLiveSeconds="120" 
+	    overflowToDisk="true"
+		maxElementsOnDisk="10000000" 
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120" 
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache 
+		name="myehcache" 
+		maxElementsInMemory="10000"
+		maxElementsOnDisk="1000" 
+		eternal="true" 
+		overflowToDisk="true"
+		diskSpoolBufferSizeMB="20" 
+		timeToLiveSeconds="259200"
+		memoryStoreEvictionPolicy="LFU" />
+		
+	<cache 
+		name="cache2" 
+		maxElementsInMemory="10000"
+		maxElementsOnDisk="1000" 
+		eternal="true" 
+		overflowToDisk="true"
+		diskSpoolBufferSizeMB="20" 
+		timeToLiveSeconds="259200"
+		memoryStoreEvictionPolicy="LFU" />
+		
+		
+</ehcache>  
